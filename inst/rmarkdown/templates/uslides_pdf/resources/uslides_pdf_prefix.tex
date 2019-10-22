@@ -1,0 +1,48 @@
+\setmainfont{Roboto Condensed}
+\setsansfont[BoldFont=Roboto Bold]{Roboto Condensed}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\usepackage[export]{adjustbox}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\titlegraphic{\tikz[overlay,remember picture]\node at (0,-1.25) {\includegraphics[width=\paperwidth]{BANNER}};}
+\logo{\vspace*{-3mm}\makebox[\paperwidth]{\hspace*{2mm}\includegraphics[height=.8cm,keepaspectratio]{BOTTOMLEFT}\hfill\includegraphics[height=.8cm,keepaspectratio]{BOTTOMRIGHT}}}
+
+\definecolor{gray}{rgb}{.3,.3,.3}
+
+\setbeamertemplate{frametitle}{\vspace{.75em}\color{black}\bfseries\insertframetitle}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{itemize item}{\color{black}\scriptsize{$\bullet$}}
+\setbeamertemplate{itemize subitem}{\color{gray}\tiny{$\bullet$}}
+\setbeamertemplate{background}{\tikz[overlay,remember picture]\node[opacity=0.05]at (current page.center){\includegraphics[width=10cm]{BACKGROUND}};}
+
+\setbeamerfont{title}{series=\bfseries,parent=structure,size=\LARGE}
+\setbeamerfont{subtitle}{series=\bfseries,parent=structure,size=\Large}
+\setbeamerfont{titlelike}{series=\bfseries,size=\Huge}
+
+\setbeamercolor{title}{fg=black}
+\setbeamercolor{subtitle}{fg=black}
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{titlelike}{fg=black}
+\setbeamercolor{structure}{fg=black}
+
+\AtBeginPart{}
+\AtBeginSection{}
+\AtBeginSubsection{}
+\AtBeginSubsubsection{}
+\setlength{\emergencystretch}{0em}
+\setlength{\parskip}{0pt}
+
+\setbeamerfont{myTOC}{series=\bfseries,size=\large}
+\AtBeginSection[]{\frame{\frametitle{Outline}%
+                  \usebeamerfont{myTOC}\tableofcontents[current]}}
+
+% \usepackage{fontawesome}
+\usepackage{color,hyperref}
+\definecolor{blue}{rgb}{.0,.15,.55}
+\hypersetup{colorlinks,breaklinks,
+  linkcolor=black,urlcolor=blue,citecolor=blue}
+\usepackage{url}
+\urlstyle{same}
+
