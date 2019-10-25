@@ -1,4 +1,4 @@
-name: U-Slides PDF
+name: rmd_to_pdf function PDF
 description: >
-  Template for uslides PDF presentation.
+  Template for miniBeamer PDF presentation.
 create_dir: false

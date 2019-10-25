@@ -1,12 +1,11 @@
 Package: miniBeamer
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: miniBeamer converter
+Version: 0.2.0
+Author: mckraqs
+Maintainer: mckraqs <mckraqs@gmail.com>
+Description: Creating beamer presentations using MiNI WUT theme colours, styling and .Rmd/.Rnw files provided
+License: MIT
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
