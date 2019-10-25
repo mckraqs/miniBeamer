@@ -5,6 +5,5 @@ utils
 grDevices
 graphics
 stats
-miniBeamer
 rmarkdown
-ggplot2
+miniBeamer

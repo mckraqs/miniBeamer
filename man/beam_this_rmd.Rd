@@ -6,41 +6,30 @@
 \usage{
 beam_this_rmd(toc = FALSE, incremental = FALSE, fig_width = 9,
   fig_height = 6, fig_crop = TRUE, fig_caption = TRUE,
-  keep_tex = FALSE, pandoc_args = NULL, highlight = "haddock",
+  keep_tex = TRUE, pandoc_args = NULL, highlight = "haddock",
   latex_engine = "xelatex")
 }
 \arguments{
-\item{toc}{\code{TRUE} to include a table of contents in the output (only
-level 1 headers will be included in the table of contents).}
+\item{toc}{Logical indicating whether to create 'Table of Contents'}
 
-\item{incremental}{\code{TRUE} to render slide bullets incrementally. Note
-that if you want to reverse the default incremental behavior for an
-individual bullet you can precede it with \code{>}. For example:
-\emph{\code{> - Bullet Text}}}
+\item{incremental}{Logical indicating whether to render bullet points incrementally. Defaults to FALSE. To reverse-order, precede item with `>'}
 
-\item{fig_width}{Default width (in inches) for figures}
+\item{fig_width}{Default figure width, in inches}
 
-\item{fig_height}{Default height (in inches) for figures}
+\item{fig_height}{Default figure height, in inches}
 
-\item{fig_crop}{\code{TRUE} to automatically apply the \code{pdfcrop} utility
-(if available) to pdf figures}
+\item{fig_crop}{Logical whether to crop figures}
 
-\item{fig_caption}{\code{TRUE} to render figures with captions}
+\item{fig_caption}{Logical indicating whether to render figure captions}
 
-\item{keep_tex}{Keep the intermediate tex file used in the conversion to PDF}
+\item{keep_tex}{Logical indicating whether to keep .tex version of file (Recommended not switching to FALSE)}
 
-\item{pandoc_args}{Additional command line options to pass to pandoc}
+\item{pandoc_args}{Optional, additional args to pass on to pandoc}
 
-\item{highlight}{Syntax highlighting style. Supported styles include
-"default", "tango", "pygments", "kate", "monochrome", "espresso",
-"zenburn", and "haddock". Pass \code{NULL} to prevent syntax highlighting.}
+\item{highlight}{Highlight style, if "default" then "haddock" is used}
 
-\item{latex_engine}{LaTeX engine for producing PDF output. Options are
-"pdflatex", "lualatex", and "xelatex".}
+\item{latex_engine}{Indicating what LaTeX engine to use}
 }
 \description{
-beam_this_rmd()
-}
-\details{
-.Rmd file into beautiful MiNI WUT themed beamer presentation
+Converting .Rmd file into beautiful MiNI WUT themed beamer presentation
 }

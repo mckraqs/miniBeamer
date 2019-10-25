@@ -1,18 +1,29 @@
 #' @title beam_this_rmd()
-#' @details .Rmd file into beautiful MiNI WUT themed beamer presentation
+#'
+#' @description Converting .Rmd file into beautiful MiNI WUT themed beamer presentation
 #'
 #' @inheritParams rmarkdown::beamer_presentation
+#' @param toc Logical indicating whether to create 'Table of Contents'
+#' @param incremental Logical indicating whether to render bullet points incrementally. Defaults to FALSE. To reverse-order, precede item with `>'
+#' @param fig_width Default figure width, in inches
+#' @param fig_height Default figure height, in inches
+#' @param fig_crop Logical whether to crop figures
+#' @param fig_caption Logical indicating whether to render figure captions
+#' @param keep_tex Logical indicating whether to keep .tex version of file (Recommended not switching to FALSE)
+#' @param pandoc_args Optional, additional args to pass on to pandoc
+#' @param highlight Highlight style, if "default" then "haddock" is used
+#' @param latex_engine Indicating what LaTeX engine to use
 #' @export
 beam_this_rmd <- function(toc = FALSE,
-                            incremental = FALSE,
-                            fig_width = 9,
-                            fig_height = 6,
-                            fig_crop = TRUE,
-                            fig_caption = TRUE,
-                            keep_tex = FALSE,
-                            pandoc_args = NULL,
-                            highlight = "haddock",
-                            latex_engine = "xelatex") {
+                          incremental = FALSE,
+                          fig_width = 9,
+                          fig_height = 6,
+                          fig_crop = TRUE,
+                          fig_caption = TRUE,
+                          keep_tex = TRUE,
+                          pandoc_args = NULL,
+                          highlight = "haddock",
+                          latex_engine = "xelatex") {
 
   ### Setting templates path
   template_path <- system.file("rmarkdown", "templates", "rmd_to_pdf", package = "miniBeamer")
@@ -23,13 +34,17 @@ beam_this_rmd <- function(toc = FALSE,
 
   doc_afterbody <- file.path(template_path, "resources", "rmd_to_pdf_afterbody.tex")
   doc_prebody <- file.path(template_path, "resources", "rmd_to_pdf_beforebody.tex")
+  if(toc == TRUE) {
+    doc_toc <- file.path(template_path, 'resources', 'rmd_to_pdf_toc.tex')
+    doc_prebody <- c(doc_prebody, doc_toc)
+  }
 
   knitr::knit_hooks$set(mysize = function(before, options, envir) if (before) return(options$size))
   knitr::opts_chunk$set(collapse = TRUE, mysize = TRUE, size = "\\scriptsize")
 
   ### Creating a beamer === calling rmarkdown::beamerpresentation with specified parameters
   rmarkdown::beamer_presentation(
-    toc = toc,
+    toc = FALSE, ### ToC created with code is prettier
     incremental = incremental,
     theme = "boxes",
     colortheme = "structure",

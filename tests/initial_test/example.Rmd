@@ -1,15 +1,14 @@
 ---
-title: "uslides HTML presentation"
-author: https://github.com/mkearney/uslides
-# output: uslides::uslides_html
-output: uslides::uslides_pdf
+title: "miniBeamer RMD_TO_PDF initial presentation"
+author: mckraqs
+output: miniBeamer::beam_this_rmd
 ---
 
-## Title slide
+## miniBeamer PDF presentation with R Markdown
 
-## uslides HTML presentation with R Markdown { .white }
+Get it from GitHub: https://github.com/mckraqs/miniBeamer
 
-Get it from GitHub: https://github.com/mkearney/uslides.
+# R Markdown
 
 ## R Markdown
 
@@ -17,7 +16,9 @@ This is an R Markdown presentation. Markdown is a simple formatting syntax for a
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
 
-## Shower
+# Shower introduction
+
+## Shower introduction
 
 These slides use a template from the [shower](https://github.com/shower/shower) presentation system. Notable features:
 
