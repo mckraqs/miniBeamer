@@ -17,5 +17,22 @@ devtools::install_github("mckraqs/miniBeamer")
 * University fonts (fonts directory)
 * [\\LaTeX](https://www.latex-project.org/get/) (and the `tex_engine` is `xelatex` if that matters)
 
+## HOW2 Section
+
+* Main presentation sections should be indicated with '#' sign (included in ToC)
+* Main presentation sections subsections should be indicated with '##' sign (not included in ToC) - texts will create frames titles
+* *themecolor* and *fontcolor* available connections (due to faculty restrictions) [graphics included in the nearest future]:
+    * Theme: *sapphire*:
+        * Font: *graphite*
+        * Font: *mokka*
+    * Theme: *graphite*:
+        * Font: *sapphire*
+        * Font: *heather*
+        * Font: *white*
+    * Theme: *white*
+        * Font: *black*
+    * Theme: *black*
+        * Font: *white*
+
 ## Additional info
 Main code inspiration comes from another Github repository: [*mkearney/uslides*](https://github.com/mkearney/uslides), many thanks!

@@ -4,12 +4,17 @@
 \alias{beam_this_rmd}
 \title{beam_this_rmd()}
 \usage{
-beam_this_rmd(toc = FALSE, incremental = FALSE, fig_width = 9,
-  fig_height = 6, fig_crop = TRUE, fig_caption = TRUE,
-  keep_tex = TRUE, pandoc_args = NULL, highlight = "haddock",
+beam_this_rmd(themecolor = "sapphire", fontcolor = "graphite",
+  toc = FALSE, incremental = FALSE, fig_width = 9, fig_height = 6,
+  fig_crop = TRUE, fig_caption = TRUE, keep_tex = TRUE,
+  pandoc_args = NULL, highlight = "haddock",
   latex_engine = "xelatex")
 }
 \arguments{
+\item{themecolor}{Sets presentation theme color (available: white, black, sapphire, graphite)}
+
+\item{fontcolor}{Sets presentation font color (available: white, black, sapphire, graphite, mokka)}
+
 \item{toc}{Logical indicating whether to create 'Table of Contents'}
 
 \item{incremental}{Logical indicating whether to render bullet points incrementally. Defaults to FALSE. To reverse-order, precede item with `>'}
@@ -32,4 +37,7 @@ beam_this_rmd(toc = FALSE, incremental = FALSE, fig_width = 9,
 }
 \description{
 Converting .Rmd file into beautiful MiNI WUT themed beamer presentation
+}
+\details{
+Only specified pairs of themecolor and fontcolor attributes are available (see: github/mckraqs/miniBeamer)
 }

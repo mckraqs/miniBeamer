@@ -1,5 +1,4 @@
 \frametitle{Slide with R Code and Output}
-\protect\hypertarget{slide-with-r-code-and-output}{}
 
 \begin{itemize}
 \tightlist
@@ -11,7 +10,7 @@
 \begin{Highlighting}[]
 \NormalTok{hw <-}\StringTok{ }\DecValTok{2} \OperatorTok{+}\StringTok{ }\DecValTok{2}
 \NormalTok{hw}
-\CommentTok{## [1] 4}
+\NormalTok{## [1] 4}
 \end{Highlighting}
 \end{Shaded}
 
