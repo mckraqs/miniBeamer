@@ -36,10 +36,17 @@
 \headcommand {\beamer@framepages {14}{14}}
 \headcommand {\slideentry {3}{0}{10}{15/19}{}{0}}
 \headcommand {\beamer@framepages {15}{19}}
-\headcommand {\slideentry {3}{0}{11}{20/20}{}{0}}
+\headcommand {\beamer@sectionpages {6}{19}}
+\headcommand {\beamer@subsectionpages {6}{19}}
+\headcommand {\sectionentry {4}{Cat image!}{20}{Cat image!}{0}}
+\headcommand {\slideentry {4}{0}{1}{20/20}{}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\beamer@partpages {1}{20}}
-\headcommand {\beamer@subsectionpages {6}{20}}
-\headcommand {\beamer@sectionpages {6}{20}}
-\headcommand {\beamer@documentpages {20}}
-\headcommand {\gdef \inserttotalframenumber {16}}
+\headcommand {\slideentry {4}{0}{2}{21/21}{}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {4}{0}{3}{22/22}{}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\beamer@partpages {1}{22}}
+\headcommand {\beamer@subsectionpages {20}{22}}
+\headcommand {\beamer@sectionpages {20}{22}}
+\headcommand {\beamer@documentpages {22}}
+\headcommand {\gdef \inserttotalframenumber {18}}

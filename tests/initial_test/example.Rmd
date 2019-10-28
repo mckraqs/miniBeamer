@@ -27,7 +27,7 @@ These slides use a template from the [shower](https://github.com/shower/shower) 
 1. Multiple themes available
 1. Printable to PDF
 
-<p class="note"> Shower ['ʃəuə] noun. A person or thing that shows.</p>
+<p class="note"> Shower noun. A person or thing that shows.</p>
 
 ## Two column layout
 
@@ -68,7 +68,7 @@ It supports both inline: \(y = x / 2\) and displayed formulas:
 
 > Learning more about programming is a long-term investment: it won’t pay off immediately, but in the long term it will allow you to solve new problems more quickly, and let you reuse your insights from previous problems in new scenarios.
 
-**Hadley Wickham? **
+**Hadley Wickham**
 
 ## Slide with R Code and Output
 
@@ -101,6 +101,12 @@ hw
 > 3. In secret from audience
 > 4. But it will work only once
 > 5. Nobody wants to see the same joke twice
+
+# Cat image!
+
+## Cat image!
+
+![Pretty cat](cat.jpeg)
 
 ## Slide with Plot
 
