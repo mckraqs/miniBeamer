@@ -2,12 +2,10 @@
 title: "title"
 subtitle: "subtitle"
 date: "`r Sys.Date()`"
-author: "Michael W. Kearney, PhD"
+author: "mckraqs"
 institute: | 
-  | School of Journalism
-  | Informatics Institute
-  | University of Missouri
-output: uslides::pdf
+  | MiNI PW
+output: miniBeamer::beam_this_rmd
 ---
 
 ```{r setup, include=FALSE}
