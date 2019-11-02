@@ -1,0 +1,16 @@
+\frametitle{Slide with R Code and Output}
+
+\begin{itemize}
+\tightlist
+\item
+  Some text \scriptsize
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hw <-}\StringTok{ }\DecValTok{2} \OperatorTok{+}\StringTok{ }\DecValTok{2}
+\NormalTok{hw}
+\NormalTok{## [1] 4}
+\end{Highlighting}
+\end{Shaded}
+
