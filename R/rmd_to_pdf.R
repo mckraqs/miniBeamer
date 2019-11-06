@@ -40,7 +40,7 @@ beam_this_rmd <- function(themecolor = 'sapphire',
   ### Setting required locations of document pre/suf-fixes
   doc_prefix <- file.path(template_path, "resources", "rmd_to_pdf_prefix.tex")
   doc_theme <- file.path(template_path, 'resources', 'themes', paste0(themecolor, '_', fontcolor, '.tex'))
-  # doc_prefix <- add_logos(doc_prefix) ### Commenting out for now
+  doc_prefix <- add_logos(doc_prefix) ### Commenting out for now
 
   doc_afterbody <- file.path(template_path, "resources", "rmd_to_pdf_afterbody.tex")
   doc_prebody <- file.path(template_path, "resources", "rmd_to_pdf_beforebody.tex")
@@ -93,3 +93,6 @@ check_themes <- function(themecolor, fontcolor) {
               (themecolor == 'white' & fontcolor == 'black') |
               (themecolor == 'black' & fontcolor == 'white'))
 }
+
+
+
