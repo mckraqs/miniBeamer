@@ -58,7 +58,7 @@
       <p class="phone"><slot name="phone"><span></span></slot></p>
       <p class="contact-email"><slot name="email"><span></span></slot></p>
       <p class="website"><slot name="url"><span></span></slot></p>
-      <slot name="address"><div class="address"><p><span class="citation">@mckraqs</span></p></div></slot>
+      <slot name="address"><div class="address"><span class="citation">@mckraqs</span></div></slot>
     </div>
   </div>
   <style>
@@ -77,6 +77,7 @@
     margin-top: 21px;
   }
   .name {
+    font-size: 28px;
     font-weight: bold;
   }
   .title {
@@ -87,6 +88,9 @@
     font-size: 21px;
     margin-top: 0.7cm;
     line-height: 1em;
+  }
+  .website {
+  	line-height: 1.4;
   }
   </style>
   </template>
