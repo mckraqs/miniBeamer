@@ -29,22 +29,6 @@ These slides use a template from the [shower](https://github.com/shower/shower) 
 
 <p class="note"> Shower noun. A person or thing that shows.</p>
 
-## Two column layout
-
-<p class="double">
-What is it? Your fathers lightsaber. This is the weapon of a Jedi Knight. Not as clumsy or as random as a blaster. An elegant weapon for a more civilized time. For over a thousand generations the Jedi Knights were the guardians of peace and justice in the Old Republic. Before the dark times, before the Empire. How did my father die? A young Jedi named Darth Vader, who was a pupil of mine until he turned to evil, helped the Empire hunt down and destroy the Jedi Knights.
-</p>
-
-
-## Two column layout, independent columns
-
-<div class="double">
-<p class="double-flow">
-How did I get into this mess? I really don't know how. We seem to be made to suffer.
-</p><p class="double-flow">
-It's our lot in life. I've got to rest before I fall apart.
-</p>
-</div>
 
 ## Lists
 

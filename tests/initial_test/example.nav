@@ -30,23 +30,19 @@
 \headcommand {\beamer@framepages {11}{11}}
 \headcommand {\slideentry {3}{0}{7}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {3}{0}{8}{13/13}{}{0}}
-\headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {3}{0}{9}{14/14}{}{0}}
-\headcommand {\beamer@framepages {14}{14}}
-\headcommand {\slideentry {3}{0}{10}{15/19}{}{0}}
-\headcommand {\beamer@framepages {15}{19}}
-\headcommand {\beamer@sectionpages {6}{19}}
-\headcommand {\beamer@subsectionpages {6}{19}}
-\headcommand {\sectionentry {4}{Cat image!}{20}{Cat image!}{0}}
-\headcommand {\slideentry {4}{0}{1}{20/20}{}{0}}
+\headcommand {\slideentry {3}{0}{8}{13/17}{}{0}}
+\headcommand {\beamer@framepages {13}{17}}
+\headcommand {\beamer@sectionpages {6}{17}}
+\headcommand {\beamer@subsectionpages {6}{17}}
+\headcommand {\sectionentry {4}{Cat image!}{18}{Cat image!}{0}}
+\headcommand {\slideentry {4}{0}{1}{18/18}{}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {4}{0}{2}{19/19}{}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {4}{0}{3}{20/20}{}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\slideentry {4}{0}{2}{21/21}{}{0}}
-\headcommand {\beamer@framepages {21}{21}}
-\headcommand {\slideentry {4}{0}{3}{22/22}{}{0}}
-\headcommand {\beamer@framepages {22}{22}}
-\headcommand {\beamer@partpages {1}{22}}
-\headcommand {\beamer@subsectionpages {20}{22}}
-\headcommand {\beamer@sectionpages {20}{22}}
-\headcommand {\beamer@documentpages {22}}
-\headcommand {\gdef \inserttotalframenumber {18}}
+\headcommand {\beamer@partpages {1}{20}}
+\headcommand {\beamer@subsectionpages {18}{20}}
+\headcommand {\beamer@sectionpages {18}{20}}
+\headcommand {\beamer@documentpages {20}}
+\headcommand {\gdef \inserttotalframenumber {16}}
