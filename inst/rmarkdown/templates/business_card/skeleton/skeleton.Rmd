@@ -1,7 +1,7 @@
 ---
 address: |
   @mckraqs
-logo: "WMiNI-znak.png" # logo has to be in same directory
+logo: "faculty_logo.png" # logo has to be in same directory
 person:
   - name: Mateusz Polakowski
     title: Data Science, MiNI PW
