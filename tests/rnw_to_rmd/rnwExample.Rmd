@@ -1,0 +1,35 @@
+
+
+---
+author: Adam Rydelek
+title: Very basic .Rnw document
+---
+# First section
+## Basic text
+
+Just a few words in here.
+
+# Second section
+## R code
+
+```{r }
+#Basic function
+print("Hello")
+```
+
+# Image section
+## Random photo
+
+![](cat.jpeg)
+
+# Plot section
+## Random plot
+
+```{r }
+#Basic plot
+x<-seq(0,10,by = 0.1)
+y <- rnorm(n = length(x))
+plot(y~x)
+```
+
+
