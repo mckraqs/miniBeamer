@@ -48,3 +48,6 @@ devtools::install_github("mckraqs/miniBeamer")
 
 ## Additional info
 Main code inspiration comes from another Github repositories: [*mkearney/uslides*](https://github.com/mkearney/uslides) (beamers) and [*rstudio/pagedown*](https://github.com/rstudio/pagedown) (business/faculty cards), many thanks!
+
+## Package authors:
+[mckraqs](https://github.com/mckraqs), [granatb](https://github.com/granatb), [Adamoso](https://github.com/Adamoso), [witoldmerkel](https://github.com/witoldmerkel), [michalSt98](https://github.com/michalSt98)
