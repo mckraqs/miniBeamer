@@ -28,6 +28,8 @@ beam_this_rmd <- function(themecolor = 'sapphire',
                           fig_caption = TRUE,
                           keep_tex = TRUE,
                           pandoc_args = NULL,
+                          bl = "BOTTOMLEFT",
+                          br = "BOTTOMRIGHT",
                           highlight = "haddock",
                           latex_engine = "xelatex") {
 
@@ -37,10 +39,13 @@ beam_this_rmd <- function(themecolor = 'sapphire',
   ### Setting templates path
   template_path <- system.file("rmarkdown", "templates", "rmd_to_pdf", package = "miniBeamer")
 
+
+
+
   ### Setting required locations of document pre/suf-fixes
   doc_prefix <- file.path(template_path, "resources", "rmd_to_pdf_prefix.tex")
   doc_theme <- file.path(template_path, 'resources', 'themes', paste0(themecolor, '_', fontcolor, '.tex'))
-  # doc_prefix <- add_logos(doc_prefix) ### Commenting out for now
+  doc_prefix <- add_logos(doc_prefix,bl,br) ### Commenting out for now
 
   doc_afterbody <- file.path(template_path, "resources", "rmd_to_pdf_afterbody.tex")
   doc_prebody <- file.path(template_path, "resources", "rmd_to_pdf_beforebody.tex")
@@ -93,3 +98,48 @@ check_themes <- function(themecolor, fontcolor) {
               (themecolor == 'white' & fontcolor == 'black') |
               (themecolor == 'black' & fontcolor == 'white'))
 }
+
+
+add_logos <- function(doc_prefix = NULL, bl = "BOTTOMLEFT", br = "BOTTOMRIGHT") {
+  if (is.null(doc_prefix)) {
+    template_path <- system.file(
+      "rmarkdown", "templates", "rmd_to_pdf", package = "miniBeamer"
+    )
+    ## set locations of css and doc pre/suf fixes
+    doc_prefix <- file.path(
+      template_path, "resources", "rmd_to_pdf_prefix.tex"
+    )
+  }
+  con <- file(doc_prefix)
+  x <- readLines(con, warn = FALSE)
+  close(con)
+
+  if (bl != "BOTTOMLEFT"){
+    if (file.exists(bl)) {
+      gsub("^\"|^'|\"$|'$", "", bl)
+      x <- gsub("BOTTOMLEFT", bl, x)
+    } else {
+      stop('Bottomleft logo file does not exist')
+    }
+  }else{
+    x <- gsub("\\\\includegraphics\\[height=.8cm,keepaspectratio\\]\\{BOTTOMLEFT\\}", "{}", x)
+  }
+
+  if (br != "BOTTOMRIGHT"){
+    if (file.exists(br)) {
+      gsub("^\"|^'|\"$|'$", "", br)
+      x <- gsub("BOTTOMRIGHT", br, x)
+    } else {
+      stop('Bottomright logo file does not exist')
+    }
+  }else{
+    x <- gsub("\\\\includegraphics\\[height=.8cm,keepaspectratio\\]\\{BOTTOMRIGHT\\}", "{}", x)
+  }
+
+
+  ## save as temp file
+  tmp <- tempfile(fileext = ".tex")
+  writeLines(x, tmp)
+  invisible(tmp)
+}
+

@@ -69,8 +69,8 @@
 }
 \usepackage{hyperref}
 \hypersetup{
-            pdftitle={miniBeamer RMD\_TO\_PDF initial presentation},
-            pdfauthor={mckraqs},
+            pdftitle={miniBeamer package presentation},
+            pdfauthor={Bartek Granat},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -192,8 +192,8 @@
 \setbeamercolor{structure}{fg=BLACK}
 \setbeamercolor{section in toc}{parent=BLACK}
 
-\title{miniBeamer RMD\_TO\_PDF initial presentation}
-\author{mckraqs}
+\title{miniBeamer package presentation}
+\author{Bartek Granat}
 \date{}
 
 \begin{document}
@@ -206,6 +206,9 @@
 \section[]{}
 \frame{\small \frametitle{Table of Contents} \tableofcontents}
 
+\hypertarget{minibeamer}{%
+\section{miniBeamer}\label{minibeamer}}
+
 \begin{frame}{miniBeamer PDF presentation with R Markdown}
 \protect\hypertarget{minibeamer-pdf-presentation-with-r-markdown}{}
 
@@ -213,31 +216,13 @@ Get it from GitHub: \url{https://github.com/mckraqs/miniBeamer}
 
 \end{frame}
 
-\hypertarget{r-markdown}{%
-\section{R Markdown}\label{r-markdown}}
+\hypertarget{package-features}{%
+\section{Package features}\label{package-features}}
 
-\begin{frame}{R Markdown}
-\protect\hypertarget{r-markdown-1}{}
+\begin{frame}{Package features}
+\protect\hypertarget{package-features-1}{}
 
-This is an R Markdown presentation. Markdown is a simple formatting
-syntax for authoring HTML, PDF, and MS Word documents. For more details
-on using R Markdown see \url{http://rmarkdown.rstudio.com}.
-
-When you click the \textbf{Knit} button a document will be generated
-that includes both content as well as the output of any embedded R code
-chunks within the document.
-
-\end{frame}
-
-\hypertarget{shower-introduction}{%
-\section{Shower introduction}\label{shower-introduction}}
-
-\begin{frame}{Shower introduction}
-\protect\hypertarget{shower-introduction-1}{}
-
-These slides use a template from the
-\href{https://github.com/shower/shower}{shower} presentation system.
-Notable features:
+Create a MiNI WUT themed presentation with following main features:
 
 \begin{enumerate}
 \tightlist
@@ -251,7 +236,83 @@ Notable features:
   Printable to PDF
 \end{enumerate}
 
-Shower noun. A person or thing that shows.
+Create a MiNI WUT themed business card
+
+\end{frame}
+
+\hypertarget{beam_this_rmd}{%
+\section{beam\_this\_rmd()}\label{beam_this_rmd}}
+
+\begin{frame}[fragile]{beam\_this\_rmd()}
+\protect\hypertarget{beam_this_rmd-1}{}
+
+beam\_this\_rmd() converting .Rmd file into beautiful MiNI WUT themed
+beamer presentation
+
+An example usage:
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rmarkdown}\OperatorTok{::}\KeywordTok{render}\NormalTok{(}\StringTok{'tests/prezentacja_pakietu.Rmd'}\NormalTok{, }
+\NormalTok{    miniBeamer}\OperatorTok{::}\KeywordTok{beam_this_rmd}\NormalTok{(}
+      \DataTypeTok{themecolor =} \StringTok{'sapphire'}\NormalTok{,}
+      \DataTypeTok{fontcolor =} \StringTok{'graphite'}\NormalTok{,}
+      \DataTypeTok{toc =} \OtherTok{FALSE}\NormalTok{,}
+      \DataTypeTok{incremental =} \OtherTok{FALSE}\NormalTok{,}
+      \DataTypeTok{fig_width =} \DecValTok{9}\NormalTok{,}
+      \DataTypeTok{fig_height =} \DecValTok{6}\NormalTok{,}
+      \DataTypeTok{fig_crop =} \OtherTok{TRUE}\NormalTok{,}
+      \DataTypeTok{fig_caption =} \OtherTok{TRUE}\NormalTok{,}
+      \DataTypeTok{keep_tex =} \OtherTok{TRUE}\NormalTok{,}
+      \DataTypeTok{pandoc_args =} \OtherTok{NULL}\NormalTok{,}
+      \DataTypeTok{bl =} \StringTok{"BOTTOMLEFT"}\NormalTok{,}
+      \DataTypeTok{br =} \StringTok{"BOTTOMRIGHT"}\NormalTok{,}
+      \DataTypeTok{highlight =} \StringTok{"haddock"}\NormalTok{,}
+      \DataTypeTok{latex_engine =} \StringTok{"xelatex"}\NormalTok{,}
+      \DataTypeTok{bl =} \StringTok{"C:/Users/bgranat/Desktop/logoPW.png"}\NormalTok{,}
+      \DataTypeTok{br =} \StringTok{"C:/Users/bgranat/Desktop/WMINIznak.png"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}[fragile]{Example presentation}
+\protect\hypertarget{example-presentation}{}
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{---}
+\NormalTok{title}\OperatorTok{:}\StringTok{ "miniBeamer RMD_TO_PDF initial presentation"}
+\NormalTok{author}\OperatorTok{:}\StringTok{ }\NormalTok{mckraqs}
+\NormalTok{output}\OperatorTok{:}\StringTok{ }\NormalTok{miniBeamer}\OperatorTok{::}\NormalTok{beam_this_rmd}
+\OperatorTok{---}
+
+\CommentTok{## miniBeamer PDF presentation with R Markdown}
+
+\NormalTok{Get it from GitHub}\OperatorTok{:}\StringTok{ }\NormalTok{https}\OperatorTok{:}\ErrorTok{//}\NormalTok{github.com}\OperatorTok{/}\NormalTok{mckraqs}\OperatorTok{/}\NormalTok{miniBeamer}
+
+\CommentTok{# R Markdown}
+
+\CommentTok{## R Markdown}
+
+\NormalTok{This is an R Markdown presentation. Markdown is a simple formatting syntax}
+\ControlFlowTok{for}\NormalTok{ authoring HTML, PDF, and MS Word documents.}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\hypertarget{presentation-features}{%
+\section{Presentation Features}\label{presentation-features}}
+
+\begin{frame}{Presentation Features}
+\protect\hypertarget{presentation-features-1}{}
+
+Let's dive more deeply into some of the presentation features!
 
 \end{frame}
 
@@ -266,16 +327,20 @@ Shower noun. A person or thing that shows.
   Ordered lists begin with a number
 \item
   You can even nest lists one inside another
+\end{enumerate}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Or mix their types
-  \item
-    But do not go too far
-  \item
-    Otherwise audience will be bored
-  \end{itemize}
+\begin{itemize}
+\tightlist
+\item
+  Or mix their types
+\item
+  But do not go too far
+\item
+  Otherwise audience will be bored
+\end{itemize}
+
+\begin{enumerate}
+\tightlist
 \item
   Look, seven rows exactly!
 \end{enumerate}
@@ -284,8 +349,6 @@ Shower noun. A person or thing that shows.
 
 \begin{frame}{Formulas}
 \protect\hypertarget{formulas}{}
-
-Formulas are rendered by KaTeX, \url{https://github.com/Khan/KaTeX}
 
 It supports both inline: \(y = x / 2\) and displayed formulas:
 
@@ -297,8 +360,8 @@ It supports both inline: \(y = x / 2\) and displayed formulas:
 \protect\hypertarget{slide-with-quote}{}
 
 \begin{quote}
-Learning more about programming is a long-term investment: it wonâ€™t
-pay off immediately, but in the long term it will allow you to solve new
+Learning more about programming is a long-term investment: it won`t pay
+off immediately, but in the long term it will allow you to solve new
 problems more quickly, and let you reuse your insights from previous
 problems in new scenarios.
 \end{quote}
@@ -310,16 +373,28 @@ problems in new scenarios.
 \begin{frame}[fragile]{Slide with R Code and Output}
 \protect\hypertarget{slide-with-r-code-and-output}{}
 
-\begin{itemize}
-\tightlist
-\item
-  Some text \scriptsize
-\end{itemize}
+\scriptsize
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{hw <-}\StringTok{ }\DecValTok{2} \OperatorTok{+}\StringTok{ }\DecValTok{2}
-\NormalTok{hw}
+\KeywordTok{print}\NormalTok{(}\StringTok{'Test1'}\NormalTok{)}
+\CommentTok{## [1] "Test1"}
+\KeywordTok{options}\NormalTok{(}\DataTypeTok{tibble.width =} \DecValTok{120}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Some text
+\end{itemize}
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{super_complicated_equation_evaluation <-}\StringTok{ }\DecValTok{2} \OperatorTok{+}\StringTok{ }\DecValTok{2}
+\NormalTok{super_complicated_equation_evaluation}
 \CommentTok{## [1] 4}
 \end{Highlighting}
 \end{Shaded}
@@ -365,16 +440,13 @@ Duster 360 & 14.3 & 8 & 360.0 & 245\tabularnewline
 
 \end{frame}
 
-\hypertarget{cat-image}{%
-\section{Cat image!}\label{cat-image}}
-
-\begin{frame}{Cat image!}
-\protect\hypertarget{cat-image-1}{}
+\begin{frame}{Never Gonna Give You Up}
+\protect\hypertarget{never-gonna-give-you-up}{}
 
 \begin{figure}
 \centering
-\includegraphics{cat.jpeg}
-\caption{Pretty cat}
+\includegraphics{foto.jpg}
+\caption{Super handsome Rick Astley}
 \end{figure}
 
 \end{frame}
@@ -382,7 +454,67 @@ Duster 360 & 14.3 & 8 & 360.0 & 245\tabularnewline
 \begin{frame}{Slide with Plot}
 \protect\hypertarget{slide-with-plot}{}
 
-\scriptsize\includegraphics{example_files/figure-beamer/unnamed-chunk-3-1.jpeg}
+\scriptsize\includegraphics{prezentacja_pakietu_files/figure-beamer/unnamed-chunk-5-1.jpeg}
+
+\end{frame}
+
+\hypertarget{business_card}{%
+\section{business\_card()}\label{business_card}}
+
+\begin{frame}[fragile]{business\_Card()}
+\protect\hypertarget{business_card-1}{}
+
+business\_card() is converting .Rmd file into beautiful MiNI WUT themed
+business card
+
+An example usage:
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rmarkdown}\OperatorTok{::}\KeywordTok{render}\NormalTok{(}
+  \StringTok{'tests/business_card/business_card.Rmd'}\NormalTok{, miniBeamer}\OperatorTok{::}\KeywordTok{business_card}\NormalTok{()}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}[fragile]{Example business card}
+\protect\hypertarget{example-business-card}{}
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{---}
+\NormalTok{address}\OperatorTok{:}\StringTok{ }\ErrorTok{|}
+\StringTok{  }\ErrorTok{@}\NormalTok{mckraqs}
+\NormalTok{logo}\OperatorTok{:}\StringTok{ "WMiNI-znak.png"}
+\NormalTok{person}\OperatorTok{:}
+\StringTok{  }\OperatorTok{-}\StringTok{ }\NormalTok{name}\OperatorTok{:}\StringTok{ }\NormalTok{Mateusz Polakowski}
+\NormalTok{    title}\OperatorTok{:}\StringTok{ }\NormalTok{Data Science, MiNI PW}
+\NormalTok{    phone}\OperatorTok{:}\StringTok{ "+48 997 998 999"}
+\NormalTok{    email}\OperatorTok{:}\StringTok{ }\NormalTok{mateusz.polakowski}\OperatorTok{@}\NormalTok{mini.pw.edu.pl}
+\NormalTok{    url}\OperatorTok{:}\StringTok{ }\NormalTok{https}\OperatorTok{:}\ErrorTok{//}\NormalTok{github.com}\OperatorTok{/}\NormalTok{mckraqs}\OperatorTok{/}\NormalTok{miniBeamer}
+\NormalTok{cols}\OperatorTok{:}\StringTok{ }\DecValTok{1}
+\NormalTok{rows}\OperatorTok{:}\StringTok{ }\DecValTok{1}
+\NormalTok{output}\OperatorTok{:}\StringTok{ }\NormalTok{miniBeamer}\OperatorTok{::}\NormalTok{business_card}
+\OperatorTok{---}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\begin{frame}{WOW! WOW! This card is nice!}
+\protect\hypertarget{wow-wow-this-card-is-nice}{}
+
+\begin{figure}
+\centering
+\includegraphics{card.png}
+\caption{Business card}
+\end{figure}
 
 \end{frame}
 
