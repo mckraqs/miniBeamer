@@ -13,10 +13,15 @@ my $filename = $ARGV[0];
 
 open (RNW, $filename);
 while (<RNW>) {
+
+    s|\\includegraphics\{(.+?)}|![]($1)|g;
+    
     s|\\begin\{(.+?)}|---|g;
     s|\\author\{(.+?)}|author: $1|g;
     s|\\title\{(.+?)}|title: $1|g;
     s|\\maketitle|---|g;
+    
+
     
     s|\\Robject\{(.+?)}|`$1`|g;
     s|\\Rcode\{(.+?)}|`$1`|g;
