@@ -1,6 +1,9 @@
 library(miniBeamer)
 library(rmarkdown)
 
+rmarkdown::render('tests/rmd_beamer/example.Rmd', miniBeamer::beam_this_rmd(toc = TRUE,
+                                                                            latex_engine = 'pdflatex'))
+
 ### .Rmd to .pdf
 rmarkdown::render('tests/prezentacja/prezentacja_pakietu.Rmd', miniBeamer::beam_this_rmd(toc = TRUE,
                                                                                          latex_engine = 'pdflatex',
