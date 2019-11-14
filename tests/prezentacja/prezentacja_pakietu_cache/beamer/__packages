@@ -1,10 +1,5 @@
 base
-methods
-datasets
-utils
-grDevices
-graphics
-stats
 miniBeamer
 rmarkdown
 ggplot2
+dplyr

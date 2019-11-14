@@ -7,10 +7,8 @@ rmarkdown::render('tests/rmd_beamer/example.Rmd', miniBeamer::beam_this_rmd(toc 
 ### .Rmd to .pdf
 rmarkdown::render('tests/prezentacja/prezentacja_pakietu.Rmd', miniBeamer::beam_this_rmd(toc = TRUE,
                                                                                          latex_engine = 'pdflatex',
-                                                                                         themecolor = 'white',
-                                                                                         fontcolor = 'black',
-                                                                                         bl = "C:/Users/Adam/Desktop/logoPW.jpg",
-                                                                                         br = "C:/Users/Adam/Desktop/logoMini.png"))
+                                                                                         bl = "C:/Users/bgranat001/Documents/GitHub/miniBeamer/tests/prezentacja/logoPW.png",
+                                                                                         br = "C:/Users/bgranat001/Documents/GitHub/miniBeamer/tests/prezentacja/logoMINI.png"))
 
 ### .Rnw to .Rmd
 ## In order for the conversion to work properly the working directory

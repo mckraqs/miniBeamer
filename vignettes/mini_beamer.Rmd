@@ -1,0 +1,70 @@
+---
+title: "mini_beamer"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{mini_beamer}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(miniBeamer)
+library(rmarkdown)
+```
+
+
+# Introduction to mini_beamer
+
+If u ever want to create a MiNI WUT themed presentation or business card the miniBeamer package makes it fast and easy.
+
+This document introduces you to miniBeamer's basic set of tools, and shows you how to use them.
+
+All sample presentations are available on GitHub.
+
+### Create a PDF presentation from rmd file with beam_this_rmd()
+
+There are a number of parameters you can pass to the function to make your presentation look just the way you like.
+
+```{r eval = FALSE}
+rmarkdown::render('tests/prezentacja/prezentacja_pakietu.Rmd', 
+                  miniBeamer::beam_this_rmd(toc = TRUE,
+                                           latex_engine = 'pdflatex',
+                                           themecolor = 'white',
+                                           fontcolor = 'black',
+                                           bl = "/tests/prezentacja/logoPW.jpg",
+                                           br = "/tests/prezentacja/logoMINI.png"))
+```
+
+### Create a PDF presentation from rnw file with  
+
+You simply need to convert rnw file to rmd and then just use beam_this_rmd on  the new file.
+
+```{r eval = FALSE}
+oldWd <- getwd()
+newWd <- paste(getwd(), "/tests/rnw_to_rmd", sep="")
+setwd(newWd)
+
+miniBeamer::rnw_to_rmd('rnwExample.Rnw')
+rmarkdown::render('rnwExample.Rmd', 
+                  miniBeamer::beam_this_rmd(toc = TRUE,
+                                            latex_engine = 'pdflatex',
+                                            themecolor = 'sapphire',
+                                            fontcolor = 'graphite',
+                                            bl = "C:/Users/Adam/Desktop/logoPW.jpg",
+                                            br = "C:/Users/Adam/Desktop/logoMini.png"))
+
+setwd(oldWd)
+```
+
+### Create a business card from rmd template
+
+```{r eval = FALSE}
+rmarkdown::render('tests/business_card/business_card.Rmd', miniBeamer::business_card())
+```
