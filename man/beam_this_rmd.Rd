@@ -31,6 +31,10 @@ beam_this_rmd(themecolor = "sapphire", fontcolor = "graphite",
 
 \item{pandoc_args}{Optional, additional args to pass on to pandoc}
 
+\item{bl}{Absolute path to bottomleft logo}
+
+\item{br}{Absolute path to bottomright logo}
+
 \item{highlight}{Highlight style, if "default" then "haddock" is used}
 
 \item{latex_engine}{Indicating what LaTeX engine to use}
