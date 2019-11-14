@@ -3,5 +3,6 @@
 export(beam_this_rmd)
 export(business_card)
 export(html_paged)
+export(rnw_to_rmd)
 import(stats)
 import(utils)
