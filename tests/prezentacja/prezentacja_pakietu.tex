@@ -1,32 +1,35 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[ignorenonframetext,]{beamer}
+\documentclass[
+  ignorenonframetext,
+]{beamer}
 \usepackage{pgfpages}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
 \beamertemplatenavigationsymbolsempty
-% Prevent slide breaks in the middle of a paragraph:
+% Prevent slide breaks in the middle of a paragraph
 \widowpenalties 1 10000
 \raggedbottom
 \setbeamertemplate{part page}{
-\centering
-\begin{beamercolorbox}[sep=16pt,center]{part title}
-  \usebeamerfont{part title}\insertpart\par
-\end{beamercolorbox}
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
 }
 \setbeamertemplate{section page}{
-\centering
-\begin{beamercolorbox}[sep=12pt,center]{part title}
-  \usebeamerfont{section title}\insertsection\par
-\end{beamercolorbox}
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
 }
 \setbeamertemplate{subsection page}{
-\centering
-\begin{beamercolorbox}[sep=8pt,center]{part title}
-  \usebeamerfont{subsection title}\insertsubsection\par
-\end{beamercolorbox}
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
 }
 \AtBeginPart{
   \frame{\partpage}
@@ -43,37 +46,42 @@
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usetheme[]{boxes}
 \usecolortheme{structure}
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-            pdftitle={miniBeamer package presentation},
-            pdfauthor={Bartek Granat},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
+  pdftitle={miniBeamer package presentation},
+  pdfauthor={Bartek Granat \textbar{} Mateusz Polakowski \textbar{} Adam Rydelek \textbar{} Michał Stawikowski \textbar{} Witold Merkel},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \newif\ifbibliography
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -115,7 +123,7 @@
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
 \usepackage{longtable,booktabs}
 \usepackage{caption}
-% These lines are needed to make table captions work with longtable:
+% Make caption package work with longtable
 \makeatletter
 \def\fnum@table{\tablename~\thetable}
 \makeatother
@@ -128,16 +136,14 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % \setmainfont{Roboto Condensed}
 % \setsansfont[BoldFont=Roboto Bold]{Roboto Condensed}
 % \setmonofont[Scale=MatchLowercase]{Inconsolata}
@@ -146,7 +152,18 @@
 \usepackage{xcolor}
 \usepackage{tikz}
 
-\logo{\vspace*{-2mm}\makebox[\paperwidth]{\hspace*{2mm}\includegraphics[height=.8cm,keepaspectratio]{C:/Users/bgranat/Desktop/logoPW.png}\hfill\includegraphics[height=.8cm,keepaspectratio]{C:/Users/bgranat/Desktop/WMINIznak.png}}}
+% Fonts only work with xelatex
+% \usepackage{fontspec}
+
+% \defaultfontfeatures{Mapping=tex-text}
+% \usefonttheme{serif}
+% \setmainfont{Adagio_Slab-Regular.otf}
+% \setbeamerfont{title}{family=\fontspec{RadikalWUT-Bold.otf}}
+% \setbeamerfont{title page}{family=\fontspec{RadikalWUT-Bold.otf}}
+% \setbeamerfont{frametitle}{family=\fontspec{RadikalWUT-Bold.otf}}
+% \setbeamerfont{frame title}{family=\fontspec{RadikalWUT-Bold.otf}}
+
+\logo{\vspace*{-2mm}\makebox[\paperwidth]{\hspace*{2mm}\includegraphics[height=.8cm,keepaspectratio]{C:/Users/bgranat001/Documents/GitHub/miniBeamer/tests/prezentacja/logoPW.png}\hfill\includegraphics[height=.8cm,keepaspectratio]{C:/Users/bgranat001/Documents/GitHub/miniBeamer/tests/prezentacja/logoMINI.png}}}
 \AtBeginPart{}
 \AtBeginSection{}
 \AtBeginSubsection{}
@@ -167,11 +184,11 @@
 \definecolor{blue}{rgb}{.0,.15,.55}
 
 % \usepackage{fontawesome}
-\setbeamertemplate{frametitle}{\vspace{.75em}\color{BLACK}\bfseries\insertframetitle}
+\setbeamertemplate{frametitle}{\vspace{.75em}\color{GRAPHITE}\bfseries\insertframetitle}
 \setbeamertemplate{navigation symbols}{}
 
-\setbeamertemplate{itemize item}{\color{BLACK}\scriptsize{$\bullet$}}
-\setbeamertemplate{itemize subitem}{\color{BLACK}\tiny{$\bullet$}}
+\setbeamertemplate{itemize item}{\color{GRAPHITE}\scriptsize{$\bullet$}}
+\setbeamertemplate{itemize subitem}{\color{GRAPHITE}\tiny{$\bullet$}}
 % \setbeamertemplate{background}{\tikz[overlay,remember picture]\node[opacity=0.05]at (current page.center){\includegraphics[width=10cm]{BACKGROUND}};}
 
 \setbeamerfont{title}{series=\bfseries,parent=structure,size=\LARGE}
@@ -180,20 +197,21 @@
 
 \usepackage{color,hyperref}
 \hypersetup{colorlinks,breaklinks,
-  linkcolor=BLACK,urlcolor=blue,citecolor=blue}
+  linkcolor=GRAPHITE,urlcolor=blue,citecolor=blue}
 \usepackage{url}
 \urlstyle{same}
 
-\setbeamercolor{title}{fg=BLACK}
-\setbeamercolor{subtitle}{fg=BLACK}
-\setbeamercolor{normal text}{fg=BLACK}
-\setbeamercolor{normal text}{bg=WHITE}
-\setbeamercolor{titlelike}{fg=BLACK}
-\setbeamercolor{structure}{fg=BLACK}
-\setbeamercolor{section in toc}{parent=BLACK}
+\setbeamercolor{title}{fg=GRAPHITE}
+\setbeamercolor{subtitle}{fg=GRAPHITE}
+\setbeamercolor{normal text}{fg=GRAPHITE}
+\setbeamercolor{normal text}{bg=SAPPHIRE}
+\setbeamercolor{titlelike}{fg=GRAPHITE}
+\setbeamercolor{structure}{fg=GRAPHITE}
+\setbeamercolor{section in toc}{parent=GRAPHITE}
 
 \title{miniBeamer package presentation}
-\author{Bartek Granat}
+\author{Bartek Granat \textbar{} Mateusz Polakowski \textbar{} Adam Rydelek
+\textbar{} Michał Stawikowski \textbar{} Witold Merkel}
 \date{}
 
 \begin{document}
@@ -222,7 +240,7 @@ Get it from GitHub: \url{https://github.com/mckraqs/miniBeamer}
 \begin{frame}{Package features}
 \protect\hypertarget{package-features-1}{}
 
-Create a MiNI WUT themed presentation with following main features:
+Create a MiNI WUT themed documents with following main features:
 
 \begin{enumerate}
 \tightlist
@@ -234,9 +252,11 @@ Create a MiNI WUT themed presentation with following main features:
   Multiple themes available
 \item
   Printable to PDF
+\item
+  RNW to RMD conversion
+\item
+  Business cards generator
 \end{enumerate}
-
-Create a MiNI WUT themed business card
 
 \end{frame}
 
@@ -264,8 +284,6 @@ An example usage:
       \DataTypeTok{fig_width =} \DecValTok{9}\NormalTok{,}
       \DataTypeTok{fig_height =} \DecValTok{6}\NormalTok{,}
       \DataTypeTok{fig_crop =} \OtherTok{TRUE}\NormalTok{,}
-      \DataTypeTok{fig_caption =} \OtherTok{TRUE}\NormalTok{,}
-      \DataTypeTok{keep_tex =} \OtherTok{TRUE}\NormalTok{,}
       \DataTypeTok{pandoc_args =} \OtherTok{NULL}\NormalTok{,}
       \DataTypeTok{bl =} \StringTok{"BOTTOMLEFT"}\NormalTok{,}
       \DataTypeTok{br =} \StringTok{"BOTTOMRIGHT"}\NormalTok{,}
@@ -316,33 +334,44 @@ Let's dive more deeply into some of the presentation features!
 
 \end{frame}
 
+\begin{frame}{Different themes}
+\protect\hypertarget{different-themes}{}
+
+\begin{figure}
+\centering
+\includegraphics[width=3.4375in,height=\textheight]{themes2.png}
+\caption{Different themes}
+\end{figure}
+
+\end{frame}
+
 \begin{frame}{Lists}
 \protect\hypertarget{lists}{}
 
 \begin{enumerate}
 \tightlist
 \item
-  Simple lists are marked with bullets
+  11.11.2019 Stoachastic Processes exam
 \item
-  Ordered lists begin with a number
+  12.11.2019 HTML homework
 \item
-  You can even nest lists one inside another
+  1.01.2020 PARTY!!!
 \end{enumerate}
 
 \begin{itemize}
 \tightlist
 \item
-  Or mix their types
+  Drink juice
 \item
-  But do not go too far
+  Eat popcorn
 \item
-  Otherwise audience will be bored
+  Go to sleep before midnight
 \end{itemize}
 
 \begin{enumerate}
 \tightlist
 \item
-  Look, seven rows exactly!
+  30.01.2020 ooops exams
 \end{enumerate}
 
 \end{frame}
@@ -360,13 +389,11 @@ It supports both inline: \(y = x / 2\) and displayed formulas:
 \protect\hypertarget{slide-with-quote}{}
 
 \begin{quote}
-Learning more about programming is a long-term investment: it won`t pay
-off immediately, but in the long term it will allow you to solve new
-problems more quickly, and let you reuse your insights from previous
-problems in new scenarios.
+Na tym przedmiocie nie nauczę was jak się robi aplikację\ldots{} ale i
+tak będziecie musieli ją zrobić.
 \end{quote}
 
-\textbf{Hadley Wickham}
+\textbf{Michał Okulewicz}
 
 \end{frame}
 
@@ -404,18 +431,16 @@ problems in new scenarios.
 \begin{frame}{Tables}
 \protect\hypertarget{tables}{}
 
-\begin{longtable}[]{@{}ccccc@{}}
+\begin{longtable}[]{@{}cccc@{}}
 \toprule
-& mpg & cyl & disp & hp\tabularnewline
+Przedmiot & Liczba godzin & ECTS &\tabularnewline
 \midrule
 \endhead
-Mazda RX4 & 21 & 6 & 160 & 110\tabularnewline
-Mazda RX4 Wag & 21 & 6 & 160 & 110\tabularnewline
-Datsun 710 & 22.8 & 4 & 108 & 93\tabularnewline
-Hornet 4 Drive & 21.4 & 6 & 258 & 110\tabularnewline
-Hornet Sportabout & 18.7 & 8 & 360.0 & 175\tabularnewline
-Valiant & 18.1 & 6 & 225.0 & 105\tabularnewline
-Duster 360 & 14.3 & 8 & 360.0 & 245\tabularnewline
+Analiza matematyczna 1 & 60 & 6 &\tabularnewline
+HTML & 30 & 4 &\tabularnewline
+Procesy Stochastyczne & 45 & 5 &\tabularnewline
+Rachunek Prawdopodobieństwa & 60 & 6 &\tabularnewline
+Zaawansowany R & 60 & 4 &\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -455,6 +480,40 @@ Duster 360 & 14.3 & 8 & 360.0 & 245\tabularnewline
 \protect\hypertarget{slide-with-plot}{}
 
 \scriptsize\includegraphics{prezentacja_pakietu_files/figure-beamer/unnamed-chunk-5-1.jpeg}
+
+\end{frame}
+
+\hypertarget{rnw_to_rmd}{%
+\section{rnw\_to\_rmd()}\label{rnw_to_rmd}}
+
+\begin{frame}[fragile]{rnw\_to\_rmd()}
+\protect\hypertarget{rnw_to_rmd-1}{}
+
+rnw\_to\_rmd is converting .Rnw file into .Rmd file which can be further
+used to create a pdf presentation
+
+An example usage:
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{oldWd <-}\StringTok{ }\KeywordTok{getwd}\NormalTok{()}
+\NormalTok{newWd <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\KeywordTok{getwd}\NormalTok{(), }\StringTok{"/tests/rnw_to_rmd"}\NormalTok{, }\DataTypeTok{sep=}\StringTok{""}\NormalTok{)}
+\KeywordTok{setwd}\NormalTok{(newWd)}
+
+\NormalTok{miniBeamer}\OperatorTok{::}\KeywordTok{rnw_to_rmd}\NormalTok{(}\StringTok{'rnwExample.Rnw'}\NormalTok{)}
+\NormalTok{rmarkdown}\OperatorTok{::}\KeywordTok{render}\NormalTok{(}\StringTok{'rnwExample.Rmd'}\NormalTok{, }
+\NormalTok{                  miniBeamer}\OperatorTok{::}\KeywordTok{beam_this_rmd}\NormalTok{(}\DataTypeTok{toc =} \OtherTok{TRUE}\NormalTok{,}
+                                            \DataTypeTok{latex_engine =} \StringTok{'pdflatex'}\NormalTok{,}
+                                            \DataTypeTok{themecolor =} \StringTok{'sapphire'}\NormalTok{,}
+                                            \DataTypeTok{fontcolor =} \StringTok{'graphite'}\NormalTok{,}
+                                            \DataTypeTok{bl =} \StringTok{"C:/Users/Adam/Desktop/logoPW.jpg"}\NormalTok{,}
+                                            \DataTypeTok{br =} \StringTok{"C:/Users/Adam/Desktop/logoMini.png"}\NormalTok{))}
+
+\KeywordTok{setwd}\NormalTok{(oldWd)}
+\end{Highlighting}
+\end{Shaded}
 
 \end{frame}
 
@@ -514,6 +573,17 @@ An example usage:
 \centering
 \includegraphics{card.png}
 \caption{Business card}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Surprise}
+\protect\hypertarget{surprise}{}
+
+\begin{figure}
+\centering
+\includegraphics{logo_beamer.png}
+\caption{Hex}
 \end{figure}
 
 \end{frame}

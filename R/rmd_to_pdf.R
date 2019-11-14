@@ -15,6 +15,8 @@
 #' @param pandoc_args Optional, additional args to pass on to pandoc
 #' @param highlight Highlight style, if "default" then "haddock" is used
 #' @param latex_engine Indicating what LaTeX engine to use
+#' @param bl Absolute path to bottomleft logo
+#' @param br Absolute path to bottomright logo
 #' @export
 #'
 #' @details Only specified pairs of themecolor and fontcolor attributes are available (see: github/mckraqs/miniBeamer)
