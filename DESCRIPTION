@@ -2,7 +2,7 @@ Package: miniBeamer
 Type: Package
 Title: miniBeamer converter
 Version: 0.2.0
-Author: mckraqs
+Author: mckraqs, granatb, Adamoso, witoldmerkel, michalSt98
 Maintainer: mckraqs <mckraqs@gmail.com>
 Description: Creating beamer presentations using MiNI WUT theme colours, styling and .Rmd/.Rnw files provided
 License: MIT
