@@ -12,11 +12,11 @@ devtools::install_github("mckraqs/miniBeamer")
 ```
 
 ## Requirements
-* University fonts installed (fonts directory)
-    * Fonts can be installed but they are not implemented into this package in order to keep all latex engines compatible.
 * [\\LaTeX](https://www.latex-project.org/get/)
 * *Perl* programming language installed in case you want to convert .Rnw files
     * Version needs to be above 5.30
+* University fonts installed (fonts directory)
+    * Fonts can be installed but they are not implemented into this package in order to keep all latex engines compatible, so we provide them in case user would like to manually change fonts in .tex files before final compilation.
 
 ## HOW2 Section
 * There are 3 main functionalities in the package. All do have complex documentation prepared inside:
