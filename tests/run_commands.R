@@ -7,10 +7,10 @@
 
 ### Beamer generator - mid-term presentation
 ### NOT RUN - absolute file paths into bl and br arguments are necessary
-# rmarkdown::render('tests/midterm_presentation/prezentacja_pakietu.Rmd', miniBeamer::rmd_to_beamer(toc = TRUE,
-#                                                                                          latex_engine = 'pdflatex',
-#                                                                                          bl = "tests/midterm_presentation/logoPW.png",
-#                                                                                          br = "tests/midterm_presentation/logoMINI.png"))
+# rmarkdown::render('tests/midterm_pres/pres.Rmd', miniBeamer::rmd_to_beamer(toc = TRUE,
+#                                                                            latex_engine = 'pdflatex',
+#                                                                            bl = "tests/midterm_pres/logoPW.png",
+#                                                                            br = "tests/midterm_pres/logoMINI.png"))
 
 ### .Rnw to .Rmd file generator
 # oldWd <- getwd()
