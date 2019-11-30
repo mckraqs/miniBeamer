@@ -28,13 +28,13 @@ This document introduces you to miniBeamer's basic set of tools, and shows you h
 
 All sample presentations are available on GitHub.
 
-### Create a PDF presentation from rmd file with beam_this_rmd()
+### Create a PDF presentation from rmd file with rmd_to_beamer()
 
 There are a number of parameters you can pass to the function to make your presentation look just the way you like.
 
 ```{r eval = FALSE}
 rmarkdown::render('tests/prezentacja/prezentacja_pakietu.Rmd', 
-                  miniBeamer::beam_this_rmd(toc = TRUE,
+                  miniBeamer::rmd_to_beamer(toc = TRUE,
                                            latex_engine = 'pdflatex',
                                            themecolor = 'white',
                                            fontcolor = 'black',
@@ -44,7 +44,7 @@ rmarkdown::render('tests/prezentacja/prezentacja_pakietu.Rmd',
 
 ### Create a PDF presentation from rnw file with  
 
-You simply need to convert rnw file to rmd and then just use beam_this_rmd on  the new file.
+You simply need to convert rnw file to rmd and then just use rmd_to_beamer on  the new file.
 
 ```{r eval = FALSE}
 oldWd <- getwd()
@@ -53,7 +53,7 @@ setwd(newWd)
 
 miniBeamer::rnw_to_rmd('rnwExample.Rnw')
 rmarkdown::render('rnwExample.Rmd', 
-                  miniBeamer::beam_this_rmd(toc = TRUE,
+                  miniBeamer::rmd_to_beamer(toc = TRUE,
                                             latex_engine = 'pdflatex',
                                             themecolor = 'sapphire',
                                             fontcolor = 'graphite',

@@ -8,7 +8,7 @@ Description: Creating beamer presentations using MiNI WUT theme colours, styling
 License: MIT
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.1
 Suggests: 
     knitr,
     rmarkdown
