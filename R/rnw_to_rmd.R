@@ -2,6 +2,8 @@
 #' @description Converting .Rnw file into .Rmd
 #' @param filename String that indicates the location and name of the .Rnw file to be converted.
 #' @export
+#'
+#' @details In order for the conversion to work properly the working directory has to be in the folder containing the .Rnw file.
 
 rnw_to_rmd <- function(filename){
   outputname <- gsub('.{3}$', '', filename)
