@@ -2,7 +2,6 @@
 #'
 #' @description Converting .Rmd file into beautiful MiNI WUT themed beamer presentation
 #'
-#' @inheritParams rmarkdown::beamer_presentation
 #' @param themecolor Sets presentation theme color (available: white, black, sapphire, graphite)
 #' @param fontcolor Sets presentation font color (available: white, black, sapphire, graphite, mokka)
 #' @param toc Logical indicating whether to create 'Table of Contents'

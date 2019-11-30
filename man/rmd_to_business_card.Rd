@@ -10,7 +10,7 @@ rmd_to_business_card(
 )
 }
 \arguments{
-\item{template}{The path to the Pandoc template to convert Markdown to HTML.}
+\item{template}{Path to HTML template used to convert .Rmd file}
 }
 \value{
 An R Markdown output format.

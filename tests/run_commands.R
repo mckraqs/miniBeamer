@@ -30,4 +30,3 @@
 
 ### Business card generator - basic example
 # rmarkdown::render('tests/rmd_to_business_card/rmd_to_business_card_example.Rmd', miniBeamer::rmd_to_business_card())
-
