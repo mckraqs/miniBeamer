@@ -17,6 +17,7 @@
 #' @param bl Absolute path to bottomleft logo
 #' @param br Absolute path to bottomright logo
 #' @export
+#' @importFrom grDevices rgb
 #'
 #' @details Only specified pairs of themecolor and fontcolor attributes are available (see: github/mckraqs/miniBeamer)
 rmd_to_beamer <- function(themecolor = 'sapphire',

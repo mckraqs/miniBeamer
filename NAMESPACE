@@ -3,3 +3,5 @@
 export(rmd_to_beamer)
 export(rmd_to_business_card)
 export(rnw_to_rmd)
+importFrom(grDevices,rgb)
+importFrom(readr,write_lines)

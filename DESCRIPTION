@@ -4,11 +4,13 @@ Title: miniBeamer converter
 Version: 0.2.0
 Author: mckraqs, granatb, Adamoso, witoldmerkel, michalSt98
 Maintainer: mckraqs <mckraqs@gmail.com>
-Description: Creating beamer presentations using MiNI WUT theme colours, styling and .Rmd/.Rnw files provided
-License: MIT
+Description: Creating beamer presentations using MiNI WUT theme colours, styling and .Rmd/.Rnw files provided.
 Encoding: UTF-8
+License: GPL
 LazyData: true
 RoxygenNote: 7.0.1
+Imports:
+    readr
 Suggests: 
     knitr,
     rmarkdown
