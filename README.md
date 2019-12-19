@@ -1,4 +1,4 @@
-# miniBeamer
+# miniBeamer <img src="man/figures/logo.png" align="right" width="150"/>
 *miniBeamer* is a R package created due to solve an university project which is related to creating beamer presentations template in *MiNI WUT* Faculty specified colours and themes. Other functionality is creating business/faculty cards perfect for sharing with other people.
 
 ## Installation
