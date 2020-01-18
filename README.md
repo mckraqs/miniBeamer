@@ -1,5 +1,5 @@
 # miniBeamer <img src="man/figures/logo.png" align="right" width="150"/>
-*miniBeamer* is a R package created due to solve an university project which is related to creating beamer presentations template in *MiNI WUT* Faculty specified colours and themes. Other functionality is creating business/faculty cards perfect for sharing with other people.
+*miniBeamer* is a R package created due to solve an university project which is related to creating beamer presentations template in *MiNI WUT* Faculty specified colours and themes. Other functionalities are creating thesis project and business/faculty cards perfect for sharing with other people.
 
 ## Installation
 
@@ -23,7 +23,7 @@ devtools::install_github("mckraqs/miniBeamer")
     * creating beamer presentations from .Rmd files (*rmd_to_beamer()*)
     * converting .Rnw files into .Rmd (*rnw_to_rmd()*)
     * creating business/faculty cards from .Rmd files (*rmd_to_business_card()*)
-    * creating thesis
+    * creating thesis project
 * Due to functionalities development and problems encountered during it, we recommend to use .Rmd conversion at first and treat .Rnw files as a final approach
 * Main presentation sections should be indicated with '#' sign (included in ToC)
 * Main presentation sections subsections should be indicated with '##' sign (not included in ToC) - texts will create frames titles
