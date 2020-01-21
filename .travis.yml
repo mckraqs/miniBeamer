@@ -4,8 +4,19 @@ language: R
 cache: packages
 
 
+env:
+  global:
+  - R_CHECK_ARGS="--timings"
+
 r_packages:
+  - archivist
+  - ggplot2
   - covr
+
+r_github_packages:
+  - ModelOriented/ingredients
+  - ModelOriented/iBreakDown
+
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
