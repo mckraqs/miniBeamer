@@ -1,5 +1,6 @@
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/granatb/miniBeamer.svg?branch=master)](https://travis-ci.org/granatb/miniBeamer)
+[![codecov](https://codecov.io/gh/granatb/miniBeamer/branch/master/graph/badge.svg)](https://codecov.io/gh/granatb/miniBeamer)
 <!-- badges: end -->
 
 
