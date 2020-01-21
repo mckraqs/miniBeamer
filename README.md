@@ -1,3 +1,8 @@
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.org/granatb/miniBeamer.svg?branch=master)](https://travis-ci.org/granatb/miniBeamer)
+<!-- badges: end -->
+
+
 # miniBeamer
 *miniBeamer* is a R package created due to solve an university project which is related to creating beamer presentations template in *MiNI WUT* Faculty specified colours and themes. Other functionality is creating business/faculty cards perfect for sharing with other people.
 
