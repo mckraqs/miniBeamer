@@ -1,9 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-<<<<<<< HEAD
 ^\.travis\.yml$
-=======
 ^doc$
 ^Meta$
 ^fonts$
->>>>>>> c0cfeab489e2965b4d6cab81c5759c1ac45befba
