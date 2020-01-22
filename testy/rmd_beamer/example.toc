@@ -1,0 +1,3 @@
+\beamer@sectionintoc {2}{R Markdown}{4}{0}{1}
+\beamer@sectionintoc {3}{Shower introduction}{6}{0}{2}
+\beamer@sectionintoc {4}{Cat image!}{18}{0}{3}

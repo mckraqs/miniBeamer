@@ -1,0 +1,245 @@
+\documentclass[ignorenonframetext,]{beamer}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+\usetheme[]{boxes}
+\usecolortheme{structure}
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\newif\ifbibliography
+\hypersetup{
+            pdftitle={Very basic .Rnw document},
+            pdfauthor={Adam Rydelek},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\DataTypeTok}[1]{#1}
+\newcommand{\DecValTok}[1]{#1}
+\newcommand{\BaseNTok}[1]{#1}
+\newcommand{\FloatTok}[1]{#1}
+\newcommand{\ConstantTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{#1}
+\newcommand{\VariableTok}[1]{#1}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\OperatorTok}[1]{#1}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{#1}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \let\insertsectionnumber\relax
+    \let\sectionname\relax
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% \setmainfont{Roboto Condensed}
+% \setsansfont[BoldFont=Roboto Bold]{Roboto Condensed}
+% \setmonofont[Scale=MatchLowercase]{Inconsolata}
+
+\usepackage[export]{adjustbox}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+
+
+
+\logo{\vspace*{-2mm}\makebox[\paperwidth]{\hspace*{2mm}\includegraphics[height=.8cm,keepaspectratio]{C:/Users/Adam/Desktop/logoPW.jpg}\hfill\includegraphics[height=.8cm,keepaspectratio]{C:/Users/Adam/Desktop/logoMini.png}}}
+\AtBeginPart{}
+\AtBeginSection{}
+\AtBeginSubsection{}
+\AtBeginSubsubsection{}
+\setlength{\emergencystretch}{0em}
+\setlength{\parskip}{0pt}
+
+\setbeamerfont{myTOC}{series=\bfseries,size=\large}
+\AtBeginSection[]{\frame{\frametitle{Outline}%
+                  \usebeamerfont{myTOC}\tableofcontents[current]}}
+
+\definecolor{SAPPHIRE}{RGB}{120, 150, 207}
+\definecolor{MOKKA}{RGB}{100, 90, 90}
+\definecolor{GRAPHITE}{RGB}{60, 60, 76}
+\definecolor{HEATHER}{RGB}{180, 160, 170}
+\definecolor{BLACK}{RGB}{0, 0, 0}
+\definecolor{WHITE}{RGB}{255, 255, 255}
+\definecolor{blue}{rgb}{.0,.15,.55}
+
+% \usepackage{fontawesome}
+\setbeamertemplate{frametitle}{\vspace{.75em}\color{GRAPHITE}\bfseries\insertframetitle}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{itemize item}{\color{GRAPHITE}\scriptsize{$\bullet$}}
+\setbeamertemplate{itemize subitem}{\color{GRAPHITE}\tiny{$\bullet$}}
+% \setbeamertemplate{background}{\tikz[overlay,remember picture]\node[opacity=0.05]at (current page.center){\includegraphics[width=10cm]{BACKGROUND}};}
+
+\setbeamerfont{title}{series=\bfseries,parent=structure,size=\LARGE}
+\setbeamerfont{subtitle}{series=\bfseries,parent=structure,size=\Large}
+\setbeamerfont{titlelike}{series=\bfseries,size=\Huge}
+
+\usepackage{color,hyperref}
+\hypersetup{colorlinks,breaklinks,
+  linkcolor=GRAPHITE,urlcolor=blue,citecolor=blue}
+\usepackage{url}
+\urlstyle{same}
+
+\setbeamercolor{title}{fg=GRAPHITE}
+\setbeamercolor{subtitle}{fg=GRAPHITE}
+\setbeamercolor{normal text}{fg=GRAPHITE}
+\setbeamercolor{normal text}{bg=SAPPHIRE}
+\setbeamercolor{titlelike}{fg=GRAPHITE}
+\setbeamercolor{structure}{fg=GRAPHITE}
+\setbeamercolor{section in toc}{parent=GRAPHITE}
+
+\title{Very basic .Rnw document}
+\author{Adam Rydelek}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+% ***
+% beforebody.tex template, feel free to use it
+% ***
+
+\section[]{}
+\frame{\small \frametitle{Table of Contents} \tableofcontents}
+
+\section{First section}\label{first-section}
+
+\begin{frame}{Basic text}
+
+Just a few words in here.
+
+\end{frame}
+
+\section{Second section}\label{second-section}
+
+\begin{frame}[fragile]{R code}
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Basic function}
+\KeywordTok{print}\NormalTok{(}\StringTok{"Hello"}\NormalTok{)}
+\NormalTok{## [1] "Hello"}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+
+\section{Image section}\label{image-section}
+
+\begin{frame}{Random photo}
+
+\begin{figure}
+\centering
+\includegraphics{cat.jpeg}
+\caption{}
+\end{figure}
+
+\end{frame}
+
+\section{Plot section}\label{plot-section}
+
+\begin{frame}[fragile]{Random plot}
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Basic plot}
+\NormalTok{x<-}\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DataTypeTok{by =} \FloatTok{0.1}\NormalTok{)}
+\NormalTok{y <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n =} \KeywordTok{length}\NormalTok{(x))}
+\KeywordTok{plot}\NormalTok{(y}\OperatorTok{~}\NormalTok{x)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{rnwExample_files/figure-beamer/unnamed-chunk-2-1.pdf}
+
+\end{frame}
+
+% ***
+% afterbody.tex template, feel free to use it
+% File generated thanks to mckraqs/miniBeamer package!
+% ***
+
+\end{document}

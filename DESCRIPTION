@@ -13,10 +13,12 @@ Imports:
     readr,
     knitr,
     bookdown,
-    stringr
+    stringr,
+	testthat
 Suggests: 
     rmarkdown
 VignetteBuilder: knitr
 SystemRequirements: pandoc (>= 1.18) - http://pandoc.org
 Depends:
     R (>= 3.2.0)
+
