@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Package: miniBeamer
 Type: Package
 Title: miniBeamer converter
@@ -14,3 +15,27 @@ Suggests:
     rmarkdown,
     testthat
 VignetteBuilder: knitr
+=======
+Package: miniBeamer
+Type: Package
+Title: miniBeamer converter
+Version: 1.0.0
+Author: mckraqs, granatb, Adamoso, witoldmerkel, michalSt98
+Maintainer: mckraqs <mckraqs@gmail.com>
+Description: Creating beamer presentations using MiNI WUT theme colours, styling and .Rmd/.Rnw files. Additional functionalities: thesis and business cards creation also provided.
+Encoding: UTF-8
+License: GPL
+LazyData: true
+RoxygenNote: 7.0.1
+Imports:
+    readr,
+    knitr,
+    bookdown,
+    stringr
+Suggests: 
+    rmarkdown
+VignetteBuilder: knitr
+SystemRequirements: pandoc (>= 1.18) - http://pandoc.org
+Depends:
+    R (>= 3.2.0)
+>>>>>>> c0cfeab489e2965b4d6cab81c5759c1ac45befba

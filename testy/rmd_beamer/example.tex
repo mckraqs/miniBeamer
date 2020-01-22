@@ -1,45 +1,8 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
-\PassOptionsToPackage{hyphens}{url}
-%
 \documentclass[ignorenonframetext,]{beamer}
-\usepackage{pgfpages}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
 \beamertemplatenavigationsymbolsempty
-% Prevent slide breaks in the middle of a paragraph:
-\widowpenalties 1 10000
-\raggedbottom
-\setbeamertemplate{part page}{
-\centering
-\begin{beamercolorbox}[sep=16pt,center]{part title}
-  \usebeamerfont{part title}\insertpart\par
-\end{beamercolorbox}
-}
-\setbeamertemplate{section page}{
-\centering
-\begin{beamercolorbox}[sep=12pt,center]{part title}
-  \usebeamerfont{section title}\insertsection\par
-\end{beamercolorbox}
-}
-\setbeamertemplate{subsection page}{
-\centering
-\begin{beamercolorbox}[sep=8pt,center]{part title}
-  \usebeamerfont{subsection title}\insertsubsection\par
-\end{beamercolorbox}
-}
-\AtBeginPart{
-  \frame{\partpage}
-}
-\AtBeginSection{
-  \ifbibliography
-  \else
-    \frame{\sectionpage}
-  \fi
-}
-\AtBeginSubsection{
-  \frame{\subsectionpage}
-}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -47,9 +10,12 @@
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
 \else % if luatex or xelatex
-  \usepackage{unicode-math}
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
 \usetheme[]{boxes}
@@ -58,23 +24,16 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
+\usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
+\newif\ifbibliography
 \hypersetup{
             pdftitle={miniBeamer RMD\_TO\_PDF initial presentation},
             pdfauthor={mckraqs},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
-\newif\ifbibliography
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -82,37 +41,37 @@
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 % Add ',fontsize=\small' for more characters per line
 \newenvironment{Shaded}{}{}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
-\newcommand{\AttributeTok}[1]{#1}
-\newcommand{\BaseNTok}[1]{#1}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
-\newcommand{\ConstantTok}[1]{#1}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
 \newcommand{\DataTypeTok}[1]{#1}
 \newcommand{\DecValTok}[1]{#1}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\BaseNTok}[1]{#1}
 \newcommand{\FloatTok}[1]{#1}
-\newcommand{\FunctionTok}[1]{#1}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{#1}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\ConstantTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
 \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
-\newcommand{\VariableTok}[1]{#1}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{#1}
+\newcommand{\VariableTok}[1]{#1}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\OperatorTok}[1]{#1}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{#1}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
 \usepackage{longtable,booktabs}
 \usepackage{caption}
 % These lines are needed to make table captions work with longtable:
@@ -122,22 +81,42 @@
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
 \makeatother
 % Scale images if necessary, so that they will not overflow the page
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \let\insertsectionnumber\relax
+    \let\sectionname\relax
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{0}
-
-% set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-
 % \setmainfont{Roboto Condensed}
 % \setsansfont[BoldFont=Roboto Bold]{Roboto Condensed}
 % \setmonofont[Scale=MatchLowercase]{Inconsolata}
@@ -218,17 +197,14 @@
 \frame{\small \frametitle{Table of Contents} \tableofcontents}
 
 \begin{frame}{miniBeamer PDF presentation with R Markdown}
-\protect\hypertarget{minibeamer-pdf-presentation-with-r-markdown}{}
 
 Get it from GitHub: \url{https://github.com/mckraqs/miniBeamer}
 
 \end{frame}
 
-\hypertarget{r-markdown}{%
-\section{R Markdown}\label{r-markdown}}
+\section{R Markdown}\label{r-markdown}
 
 \begin{frame}{R Markdown}
-\protect\hypertarget{r-markdown-1}{}
 
 This is an R Markdown presentation. Markdown is a simple formatting
 syntax for authoring HTML, PDF, and MS Word documents. For more details
@@ -240,17 +216,16 @@ chunks within the document.
 
 \end{frame}
 
-\hypertarget{shower-introduction}{%
-\section{Shower introduction}\label{shower-introduction}}
+\section{Shower introduction}\label{shower-introduction}
 
 \begin{frame}{Shower introduction}
-\protect\hypertarget{shower-introduction-1}{}
 
 These slides use a template from the
 \href{https://github.com/shower/shower}{shower} presentation system.
 Notable features:
 
 \begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   Works in all modern browsers
@@ -267,9 +242,9 @@ Shower noun. A person or thing that shows.
 \end{frame}
 
 \begin{frame}{Lists}
-\protect\hypertarget{lists}{}
 
 \begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   Simple lists are marked with bullets
@@ -294,7 +269,6 @@ Shower noun. A person or thing that shows.
 \end{frame}
 
 \begin{frame}{Formulas}
-\protect\hypertarget{formulas}{}
 
 Formulas are rendered by KaTeX, \url{https://github.com/Khan/KaTeX}
 
@@ -305,7 +279,6 @@ It supports both inline: \(y = x / 2\) and displayed formulas:
 \end{frame}
 
 \begin{frame}{Slide with quote}
-\protect\hypertarget{slide-with-quote}{}
 
 \begin{quote}
 Learning more about programming is a long-term investment: it won't pay
@@ -319,7 +292,6 @@ problems in new scenarios.
 \end{frame}
 
 \begin{frame}[fragile]{Slide with R Code and Output}
-\protect\hypertarget{slide-with-r-code-and-output}{}
 
 \begin{itemize}
 \tightlist
@@ -331,14 +303,13 @@ problems in new scenarios.
 \begin{Highlighting}[]
 \NormalTok{hw <-}\StringTok{ }\DecValTok{2} \OperatorTok{+}\StringTok{ }\DecValTok{2}
 \NormalTok{hw}
-\CommentTok{## [1] 4}
+\NormalTok{## [1] 4}
 \end{Highlighting}
 \end{Shaded}
 
 \end{frame}
 
 \begin{frame}{Tables}
-\protect\hypertarget{tables}{}
 
 \begin{longtable}[]{@{}ccccc@{}}
 \toprule
@@ -358,9 +329,9 @@ Duster 360 & 14.3 & 8 & 360.0 & 245\tabularnewline
 \end{frame}
 
 \begin{frame}{Lists item by item}
-\protect\hypertarget{lists-item-by-item}{}
 
 \begin{enumerate}[<+->]
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   Lets you reveal list items one by one
@@ -376,11 +347,9 @@ Duster 360 & 14.3 & 8 & 360.0 & 245\tabularnewline
 
 \end{frame}
 
-\hypertarget{cat-image}{%
-\section{Cat image!}\label{cat-image}}
+\section{Cat image!}\label{cat-image}
 
 \begin{frame}{Cat image!}
-\protect\hypertarget{cat-image-1}{}
 
 \begin{figure}
 \centering
@@ -391,9 +360,8 @@ Duster 360 & 14.3 & 8 & 360.0 & 245\tabularnewline
 \end{frame}
 
 \begin{frame}{Slide with Plot}
-\protect\hypertarget{slide-with-plot}{}
 
-\scriptsize\includegraphics{example_files/figure-beamer/unnamed-chunk-3-1.jpeg}
+\scriptsize\includegraphics{rmd_to_beamer_example_files/figure-beamer/unnamed-chunk-3-1.jpeg}
 
 \end{frame}
 

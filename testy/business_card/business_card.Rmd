@@ -10,5 +10,5 @@ person:
     url: https://github.com/mckraqs/miniBeamer
 cols: 1
 rows: 1
-output: miniBeamer::business_card
+output: miniBeamer::rmd_to_business_card
 ---

@@ -1,0 +1,40 @@
+% \setmainfont{Roboto Condensed}
+% \setsansfont[BoldFont=Roboto Bold]{Roboto Condensed}
+% \setmonofont[Scale=MatchLowercase]{Inconsolata}
+
+\usepackage[export]{adjustbox}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+% Fonts only work with xelatex
+% \usepackage{fontspec}
+
+% \defaultfontfeatures{Mapping=tex-text}
+% \usefonttheme{serif}
+% \setmainfont{Adagio_Slab-Regular.otf}
+% \setbeamerfont{title}{family=\fontspec{RadikalWUT-Bold.otf}}
+% \setbeamerfont{title page}{family=\fontspec{RadikalWUT-Bold.otf}}
+% \setbeamerfont{frametitle}{family=\fontspec{RadikalWUT-Bold.otf}}
+% \setbeamerfont{frame title}{family=\fontspec{RadikalWUT-Bold.otf}}
+
+\logo{\vspace*{-2mm}\makebox[\paperwidth]{\hspace*{2mm}\includegraphics[height=.8cm,keepaspectratio]{BOTTOMLEFT}\hfill\includegraphics[height=.8cm,keepaspectratio]{BOTTOMRIGHT}}}
+\AtBeginPart{}
+\AtBeginSection{}
+\AtBeginSubsection{}
+\AtBeginSubsubsection{}
+\setlength{\emergencystretch}{0em}
+\setlength{\parskip}{0pt}
+
+\setbeamerfont{myTOC}{series=\bfseries,size=\large}
+\AtBeginSection[]{\frame{\frametitle{Outline}%
+                  \usebeamerfont{myTOC}\tableofcontents[current]}}
+
+\definecolor{SAPPHIRE}{RGB}{120, 150, 207}
+\definecolor{MOKKA}{RGB}{100, 90, 90}
+\definecolor{GRAPHITE}{RGB}{60, 60, 76}
+\definecolor{HEATHER}{RGB}{180, 160, 170}
+\definecolor{BLACK}{RGB}{0, 0, 0}
+\definecolor{WHITE}{RGB}{255, 255, 255}
+\definecolor{blue}{rgb}{.0,.15,.55}
+
+% \usepackage{fontawesome}

@@ -117,7 +117,7 @@ options(tibble.width = 120)
 
 - Some text
 
-```{r, cache=TRUE}
+```{r cache=TRUE}
 super_complicated_equation_evaluation <- 2 + 2
 super_complicated_equation_evaluation
 ```

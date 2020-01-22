@@ -1,88 +1,39 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode}{hyperref}
-\PassOptionsToPackage{hyphens}{url}
-%
-\documentclass[
-  ignorenonframetext,
-]{beamer}
-\usepackage{pgfpages}
+\documentclass[ignorenonframetext,]{beamer}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
 \beamertemplatenavigationsymbolsempty
-% Prevent slide breaks in the middle of a paragraph
-\widowpenalties 1 10000
-\raggedbottom
-\setbeamertemplate{part page}{
-  \centering
-  \begin{beamercolorbox}[sep=16pt,center]{part title}
-    \usebeamerfont{part title}\insertpart\par
-  \end{beamercolorbox}
-}
-\setbeamertemplate{section page}{
-  \centering
-  \begin{beamercolorbox}[sep=12pt,center]{part title}
-    \usebeamerfont{section title}\insertsection\par
-  \end{beamercolorbox}
-}
-\setbeamertemplate{subsection page}{
-  \centering
-  \begin{beamercolorbox}[sep=8pt,center]{part title}
-    \usebeamerfont{subsection title}\insertsubsection\par
-  \end{beamercolorbox}
-}
-\AtBeginPart{
-  \frame{\partpage}
-}
-\AtBeginSection{
-  \ifbibliography
-  \else
-    \frame{\sectionpage}
-  \fi
-}
-\AtBeginSubsection{
-  \frame{\subsectionpage}
-}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
 \usetheme[]{boxes}
 \usecolortheme{structure}
-% Use upquote if available, for straight quotes in verbatim environments
+% use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
-\usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={miniBeamer package presentation},
-  pdfauthor={Bartek Granat \textbar{} Mateusz Polakowski \textbar{} Adam Rydelek \textbar{} Michał Stawikowski \textbar{} Witold Merkel},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \newif\ifbibliography
+\hypersetup{
+            pdftitle={miniBeamer package presentation},
+            pdfauthor={Bartek Granat \textbar{} Mateusz Polakowski \textbar{} Adam Rydelek \textbar{} Michał Stawikowski \textbar{} Witold Merkel},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -90,60 +41,82 @@
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 % Add ',fontsize=\small' for more characters per line
 \newenvironment{Shaded}{}{}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
-\newcommand{\AttributeTok}[1]{#1}
-\newcommand{\BaseNTok}[1]{#1}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
-\newcommand{\ConstantTok}[1]{#1}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
 \newcommand{\DataTypeTok}[1]{#1}
 \newcommand{\DecValTok}[1]{#1}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\BaseNTok}[1]{#1}
 \newcommand{\FloatTok}[1]{#1}
-\newcommand{\FunctionTok}[1]{#1}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{#1}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\ConstantTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
 \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
-\newcommand{\VariableTok}[1]{#1}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.00,0.50,0.50}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{#1}
+\newcommand{\VariableTok}[1]{#1}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\OperatorTok}[1]{#1}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{1.00,0.25,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{#1}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
 \usepackage{longtable,booktabs}
 \usepackage{caption}
-% Make caption package work with longtable
+% These lines are needed to make table captions work with longtable:
 \makeatletter
 \def\fnum@table{\tablename~\thetable}
 \makeatother
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
 \makeatother
 % Scale images if necessary, so that they will not overflow the page
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \let\insertsectionnumber\relax
+    \let\sectionname\relax
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\setcounter{secnumdepth}{0}
 % \setmainfont{Roboto Condensed}
 % \setsansfont[BoldFont=Roboto Bold]{Roboto Condensed}
 % \setmonofont[Scale=MatchLowercase]{Inconsolata}
@@ -163,7 +136,7 @@
 % \setbeamerfont{frametitle}{family=\fontspec{RadikalWUT-Bold.otf}}
 % \setbeamerfont{frame title}{family=\fontspec{RadikalWUT-Bold.otf}}
 
-\logo{\vspace*{-2mm}\makebox[\paperwidth]{\hspace*{2mm}\includegraphics[height=.8cm,keepaspectratio]{C:/Users/bgranat001/Documents/GitHub/miniBeamer/tests/prezentacja/logoPW.png}\hfill\includegraphics[height=.8cm,keepaspectratio]{C:/Users/bgranat001/Documents/GitHub/miniBeamer/tests/prezentacja/logoMINI.png}}}
+\logo{\vspace*{-2mm}\makebox[\paperwidth]{\hspace*{2mm}\includegraphics[height=.8cm,keepaspectratio]{/mnt/HDD1/Studia/Semestr 5/R dla zaawansowanych/Projekt 1/miniBeamer/tests/midterm_pres/logoPW.png}\hfill\includegraphics[height=.8cm,keepaspectratio]{/mnt/HDD1/Studia/Semestr 5/R dla zaawansowanych/Projekt 1/miniBeamer/tests/midterm_pres/logoMINI.png}}}
 \AtBeginPart{}
 \AtBeginSection{}
 \AtBeginSubsection{}
@@ -224,25 +197,22 @@
 \section[]{}
 \frame{\small \frametitle{Table of Contents} \tableofcontents}
 
-\hypertarget{minibeamer}{%
-\section{miniBeamer}\label{minibeamer}}
+\section{miniBeamer}\label{minibeamer}
 
 \begin{frame}{miniBeamer PDF presentation with R Markdown}
-\protect\hypertarget{minibeamer-pdf-presentation-with-r-markdown}{}
 
 Get it from GitHub: \url{https://github.com/mckraqs/miniBeamer}
 
 \end{frame}
 
-\hypertarget{package-features}{%
-\section{Package features}\label{package-features}}
+\section{Package features}\label{package-features}
 
 \begin{frame}{Package features}
-\protect\hypertarget{package-features-1}{}
 
 Create a MiNI WUT themed documents with following main features:
 
 \begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   Works in all modern browsers
@@ -260,11 +230,9 @@ Create a MiNI WUT themed documents with following main features:
 
 \end{frame}
 
-\hypertarget{beam_this_rmd}{%
-\section{beam\_this\_rmd()}\label{beam_this_rmd}}
+\section{beam\_this\_rmd()}\label{beam_this_rmd}
 
 \begin{frame}[fragile]{beam\_this\_rmd()}
-\protect\hypertarget{beam_this_rmd-1}{}
 
 beam\_this\_rmd() converting .Rmd file into beautiful MiNI WUT themed
 beamer presentation
@@ -297,7 +265,6 @@ An example usage:
 \end{frame}
 
 \begin{frame}[fragile]{Example presentation}
-\protect\hypertarget{example-presentation}{}
 
 \scriptsize
 
@@ -309,13 +276,13 @@ An example usage:
 \NormalTok{output}\OperatorTok{:}\StringTok{ }\NormalTok{miniBeamer}\OperatorTok{::}\NormalTok{beam_this_rmd}
 \OperatorTok{---}
 
-\CommentTok{## miniBeamer PDF presentation with R Markdown}
+\NormalTok{## miniBeamer PDF presentation with R Markdown}
 
 \NormalTok{Get it from GitHub}\OperatorTok{:}\StringTok{ }\NormalTok{https}\OperatorTok{:}\ErrorTok{//}\NormalTok{github.com}\OperatorTok{/}\NormalTok{mckraqs}\OperatorTok{/}\NormalTok{miniBeamer}
 
 \CommentTok{# R Markdown}
 
-\CommentTok{## R Markdown}
+\NormalTok{## R Markdown}
 
 \NormalTok{This is an R Markdown presentation. Markdown is a simple formatting syntax}
 \ControlFlowTok{for}\NormalTok{ authoring HTML, PDF, and MS Word documents.}
@@ -324,31 +291,28 @@ An example usage:
 
 \end{frame}
 
-\hypertarget{presentation-features}{%
-\section{Presentation Features}\label{presentation-features}}
+\section{Presentation Features}\label{presentation-features}
 
 \begin{frame}{Presentation Features}
-\protect\hypertarget{presentation-features-1}{}
 
 Let's dive more deeply into some of the presentation features!
 
 \end{frame}
 
 \begin{frame}{Different themes}
-\protect\hypertarget{different-themes}{}
 
 \begin{figure}
 \centering
-\includegraphics[width=3.4375in,height=\textheight]{themes2.png}
+\includegraphics[width=3.43750in]{themes2.png}
 \caption{Different themes}
 \end{figure}
 
 \end{frame}
 
 \begin{frame}{Lists}
-\protect\hypertarget{lists}{}
 
 \begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   11.11.2019 Stoachastic Processes exam
@@ -369,6 +333,7 @@ Let's dive more deeply into some of the presentation features!
 \end{itemize}
 
 \begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   30.01.2020 ooops exams
@@ -377,7 +342,6 @@ Let's dive more deeply into some of the presentation features!
 \end{frame}
 
 \begin{frame}{Formulas}
-\protect\hypertarget{formulas}{}
 
 It supports both inline: \(y = x / 2\) and displayed formulas:
 
@@ -386,7 +350,6 @@ It supports both inline: \(y = x / 2\) and displayed formulas:
 \end{frame}
 
 \begin{frame}{Slide with quote}
-\protect\hypertarget{slide-with-quote}{}
 
 \begin{quote}
 Na tym przedmiocie nie nauczę was jak się robi aplikację\ldots{} ale i
@@ -398,14 +361,13 @@ tak będziecie musieli ją zrobić.
 \end{frame}
 
 \begin{frame}[fragile]{Slide with R Code and Output}
-\protect\hypertarget{slide-with-r-code-and-output}{}
 
 \scriptsize
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{print}\NormalTok{(}\StringTok{'Test1'}\NormalTok{)}
-\CommentTok{## [1] "Test1"}
+\NormalTok{## [1] "Test1"}
 \KeywordTok{options}\NormalTok{(}\DataTypeTok{tibble.width =} \DecValTok{120}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -422,14 +384,13 @@ tak będziecie musieli ją zrobić.
 \begin{Highlighting}[]
 \NormalTok{super_complicated_equation_evaluation <-}\StringTok{ }\DecValTok{2} \OperatorTok{+}\StringTok{ }\DecValTok{2}
 \NormalTok{super_complicated_equation_evaluation}
-\CommentTok{## [1] 4}
+\NormalTok{## [1] 4}
 \end{Highlighting}
 \end{Shaded}
 
 \end{frame}
 
 \begin{frame}{Tables}
-\protect\hypertarget{tables}{}
 
 \begin{longtable}[]{@{}cccc@{}}
 \toprule
@@ -447,9 +408,9 @@ Zaawansowany R & 60 & 4 &\tabularnewline
 \end{frame}
 
 \begin{frame}{Lists item by item}
-\protect\hypertarget{lists-item-by-item}{}
 
 \begin{enumerate}[<+->]
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   Lets you reveal list items one by one
@@ -466,7 +427,6 @@ Zaawansowany R & 60 & 4 &\tabularnewline
 \end{frame}
 
 \begin{frame}{Never Gonna Give You Up}
-\protect\hypertarget{never-gonna-give-you-up}{}
 
 \begin{figure}
 \centering
@@ -477,17 +437,14 @@ Zaawansowany R & 60 & 4 &\tabularnewline
 \end{frame}
 
 \begin{frame}{Slide with Plot}
-\protect\hypertarget{slide-with-plot}{}
 
-\scriptsize\includegraphics{prezentacja_pakietu_files/figure-beamer/unnamed-chunk-5-1.jpeg}
+\scriptsize\includegraphics{pres_files/figure-beamer/unnamed-chunk-5-1.jpeg}
 
 \end{frame}
 
-\hypertarget{rnw_to_rmd}{%
-\section{rnw\_to\_rmd()}\label{rnw_to_rmd}}
+\section{rnw\_to\_rmd()}\label{rnw_to_rmd}
 
 \begin{frame}[fragile]{rnw\_to\_rmd()}
-\protect\hypertarget{rnw_to_rmd-1}{}
 
 rnw\_to\_rmd is converting .Rnw file into .Rmd file which can be further
 used to create a pdf presentation
@@ -517,11 +474,9 @@ An example usage:
 
 \end{frame}
 
-\hypertarget{business_card}{%
-\section{business\_card()}\label{business_card}}
+\section{business\_card()}\label{business_card}
 
 \begin{frame}[fragile]{business\_Card()}
-\protect\hypertarget{business_card-1}{}
 
 business\_card() is converting .Rmd file into beautiful MiNI WUT themed
 business card
@@ -541,7 +496,6 @@ An example usage:
 \end{frame}
 
 \begin{frame}[fragile]{Example business card}
-\protect\hypertarget{example-business-card}{}
 
 \scriptsize
 
@@ -567,7 +521,6 @@ An example usage:
 \end{frame}
 
 \begin{frame}{WOW! WOW! This card is nice!}
-\protect\hypertarget{wow-wow-this-card-is-nice}{}
 
 \begin{figure}
 \centering
@@ -578,7 +531,6 @@ An example usage:
 \end{frame}
 
 \begin{frame}{Surprise}
-\protect\hypertarget{surprise}{}
 
 \begin{figure}
 \centering

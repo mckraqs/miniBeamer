@@ -12,3 +12,6 @@ rnw_to_rmd(filename)
 \description{
 Converting .Rnw file into .Rmd
 }
+\details{
+In order for the conversion to work properly the working directory has to be in the folder containing the .Rnw file.
+}
