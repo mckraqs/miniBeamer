@@ -1,0 +1,14 @@
+---
+address: |
+  @mckraqs
+logo: "WMiNI-znak.png"
+person:
+  - name: Mateusz Polakowski
+    title: Data Science, MiNI PW
+    phone: "+48 997 998 999"
+    email: mateusz.polakowski@mini.pw.edu.pl
+    url: https://github.com/mckraqs/miniBeamer
+cols: 1
+rows: 1
+output: miniBeamer::rmd_to_business_card
+---
