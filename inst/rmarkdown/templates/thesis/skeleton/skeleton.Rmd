@@ -13,7 +13,7 @@ knit: "bookdown::render_book"
 site: bookdown::bookdown_site
 output: 
 #  miniBeamer::thesis_pdf: default
-  mimiBemaer::thesis_gitbook: default
+  miniBeamer::thesis_gitbook: default
 #  miniBeamer::thesis_word: default
 #  miniBeamer::thesis_epub: default
 # If you are creating a PDF you'll need to write your preliminary content (e.g., abstract, acknowledgements) here or

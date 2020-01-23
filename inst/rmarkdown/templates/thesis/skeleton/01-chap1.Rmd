@@ -92,7 +92,7 @@ Included in this template is a file called `flights.csv`.  This file includes a 
 We can load in this data set using the following command:
 
 ```{r load_data}
-flights <- read.csv("data/flights.csv")
+iris <- read.csv("data/iris.csv")
 ```
 
 The data is now stored in the data frame called `flights` in **R**.  To get a better feel for the variables included in this dataset we can use a variety of functions.  Here we can see the dimensions (rows by columns) and also the names of the columns.

@@ -13,7 +13,8 @@ This first appendix includes all of the R chunks of code that were hidden throug
 
 **In Chapter \@ref(ref-labels):**
 
-```{r ref.label='include_packages_2', results='hide', echo = TRUE}
+```{r results='hide', echo = TRUE}
+2+2
 ```
 
 # The Second Appendix, for Fun
