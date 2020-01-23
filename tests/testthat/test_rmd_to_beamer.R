@@ -1,6 +1,6 @@
-context("Sprawdzamy czy funkcja rmd_to_beamer gituwa")
+context("Testing rmd_to_beamer function")
 
-test_that("Testuje zgodnosc plikow generowanych przez funkcje",{
+test_that("Testing equivalency of generated files",{
 
   rmarkdown::render('./../test_items/testowe_new.rmd', miniBeamer::rmd_to_beamer(toc = TRUE, latex_engine = 'pdflatex'))
 
