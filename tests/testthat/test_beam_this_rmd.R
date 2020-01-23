@@ -1,13 +1,12 @@
-context("Sprawdzamy czy funkcja gituwa")
+context("beam_this_rmd tests")
 
-test_that("opis co testuje w tym bloku",{
+test_that("Test description",{
 
+  #ret <- "Get it from GitHub: https://github.com/mckraqs/miniBeamer"
+  #boolek <- ret == readLines(system.file("tests/test_items", "testowe.rmd", package = "miniBeamer"))[15]
+  boolek <- TRUE
 
-#ret <- "Get it from GitHub: https://github.com/mckraqs/miniBeamer"
-#boolek <- ret == readLines(system.file("tests/test_items", "testowe.rmd", package = "miniBeamer"))[15]
-boolek <- TRUE
-
-expect_true(boolek)
+  expect_true(boolek)
 
 })
 
